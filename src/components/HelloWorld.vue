@@ -1,21 +1,22 @@
 <script setup lang="ts">
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
+import {findFibonacci} from './helper';
 
 defineProps<{msg: string}>();
 
-const count = ref(2);
+const count = ref(1);
+
+const fibonacciCount = computed(() => findFibonacci(count.value));
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    YESSsss
     <button type="button" @click="count++">count is {{ count }}</button>
+    Fibonacci of count is {{ fibonacciCount }}
     <p>
-      Edit
       <code>components/HelloWorld.vue</code>
-      to test HMR
     </p>
   </div>
 
