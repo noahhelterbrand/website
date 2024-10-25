@@ -11,7 +11,7 @@ on:
 jobs:
   build-and-test:
     concurrency:
-      group: build-${{ github.event.pull_request.nuber || github.ref || github.run_id }}
+      group: build-${{ github.event.pull_request.number || github.ref || github.run_id }}
     runs-on: ubuntu-latest
 
     steps:
@@ -40,3 +40,14 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      - name: Lint Cache
+        uses: actions/cache@v3
+        with:
+          path: '**/.eslintcache'
+          key: ${{ runner.os }}-eslint
+          restore-keys: |
+            ${{ runner.os }}-eslint
+
+      - name: Lint
+        run: yarn lint
