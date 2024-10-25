@@ -9,25 +9,32 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-test:
+    concurrency:
+      group: build-${{ github.event.pull_request.nuber || github.ref || github.run_id }}
+    runs-on: [self-hosted, ubuntu-latest]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc' 
+          cache: "yarn"
+          cache-dependency-path: "yarn.lock"
 
-      - name: Yarn clean
-        run: yarn cache clean
+      - name: Clean
+        run: |
+         git --version
+         git clean -fdx -e node_modules -e .yarn
 
-      # Install project dependencies
-      - name: Install dependencies
-        run: yarn install
+      - name: Install Dependencies
+        timeout-minutes: 10
+        run: | 
+          yarn install --immutable
+          yarn dedupe --check
 
-      # Run the build
-      - name: Build the project
+      - name: Build
         run: yarn build
