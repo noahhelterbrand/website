@@ -21,8 +21,8 @@ jobs:
         with:
           node-version-file: '.nvmrc' 
 
-      - name: Install Yarn
-        run: corepack enable yarn
+      - name: Yarn clean
+        run: yarn cache clean
 
       # Install project dependencies
       - name: Install dependencies
