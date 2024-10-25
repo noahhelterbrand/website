@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "rm -rf dist && vue-tsc -b --noEmit && vite build -c vite.config.ts",
     "preview": "vite preview",
     "lint": "concurrently -n Prettier,esLint \"yarn prettier:check\" \"yarn eslint:check\"",
     "lint:fix": "yarn eslint:fix && yarn prettier:fix",
