@@ -12,7 +12,7 @@ jobs:
   build-and-test:
     concurrency:
       group: build-${{ github.event.pull_request.nuber || github.ref || github.run_id }}
-    runs-on: [self-hosted, ubuntu-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
