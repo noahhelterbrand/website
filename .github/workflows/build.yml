@@ -1,22 +1,33 @@
-name: Build
+name: Build and Test
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Set up Node
-      uses: actions/setup-node@v4
-      with:
-        node-version-file: '.nvmrc'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc' 
 
-    - name: Install dependencies
-      run: yarn install
+      - name: Install Yarn
+        run: corepack enable yarn
 
-    - name: Build project
-      run: yarn build
+      # Install project dependencies
+      - name: Install dependencies
+        run: yarn install
+
+      # Run the build
+      - name: Build the project
+        run: yarn build
