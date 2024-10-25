@@ -23,18 +23,18 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc' 
-          cache: "yarn"
-          cache-dependency-path: "yarn.lock"
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
 
       - name: Clean
         run: |
-         git --version
-         git clean -fdx -e node_modules -e .yarn
+          git --version
+          git clean -fdx -e node_modules -e .yarn
 
       - name: Install Dependencies
         timeout-minutes: 10
-        run: | 
+        run: |
           yarn install --immutable
           yarn dedupe --check
 
