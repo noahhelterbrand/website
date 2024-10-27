@@ -444,6 +444,53 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@primeuix/styled@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@primeuix/styled@npm:0.2.0"
+  dependencies:
+    "@primeuix/utils": "npm:^0.2.0"
+  checksum: 10c0/82b14ea88acc73e64a685f0d543038c7da7bbb68221e795aac84d3db111184044586462405d40a5f7242fc317ad27a7d68edfc5e4c0616b1a8ed971a057a40aa
+  languageName: node
+  linkType: hard
+
+"@primeuix/utils@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@primeuix/utils@npm:0.2.0"
+  checksum: 10c0/139d5f239a79531da9c3409334118c7f7d937ff62d47cd65aa62872b917c2ebb6af3317136815bec2ec74facb9edd2efa0730c2bc6909b1ce8f6e146501a90f2
+  languageName: node
+  linkType: hard
+
+"@primevue/core@npm:4.1.1":
+  version: 4.1.1
+  resolution: "@primevue/core@npm:4.1.1"
+  dependencies:
+    "@primeuix/styled": "npm:^0.2.0"
+    "@primeuix/utils": "npm:^0.2.0"
+  peerDependencies:
+    vue: ^3.0.0
+  checksum: 10c0/e4a460d5275bf99bb48e71673e892ae4f21c0704cf4ddddd0842de3df6786c77976d3ad2046875fc5dd1d2fdb60287e554f6535976693a2b0dc1e456a41cffdd
+  languageName: node
+  linkType: hard
+
+"@primevue/icons@npm:4.1.1":
+  version: 4.1.1
+  resolution: "@primevue/icons@npm:4.1.1"
+  dependencies:
+    "@primeuix/utils": "npm:^0.2.0"
+    "@primevue/core": "npm:4.1.1"
+  checksum: 10c0/da8ebbcc8e854a3a9136635bd20f9682aea844fb690251e88b5d741ee9ff4c21ec34ad52c5c04f3a81dc357d83c1da69f9e15c9b9263aa5a7a4710de284421b0
+  languageName: node
+  linkType: hard
+
+"@primevue/themes@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@primevue/themes@npm:4.1.1"
+  dependencies:
+    "@primeuix/styled": "npm:^0.2.0"
+  checksum: 10c0/690d98bc50c4149a6d178bfe7affa0761457c0070f07cd1e0ba7d4d3e77036b2360cca36711ec968c3ae371de7dd421788f61cae026d3da8a23be7acd210e8eb
+  languageName: node
+  linkType: hard
+
 "@rollup/rollup-android-arm-eabi@npm:4.24.0":
   version: 4.24.0
   resolution: "@rollup/rollup-android-arm-eabi@npm:4.24.0"
@@ -1701,6 +1748,7 @@ __metadata:
   resolution: "firstwebsitevite@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.13.0"
+    "@primevue/themes": "npm:^4.1.1"
     "@vitejs/plugin-vue": "npm:^5.1.4"
     "@vitest/coverage-v8": "npm:2.1.3"
     concurrently: "npm:^9.0.1"
@@ -1708,6 +1756,7 @@ __metadata:
     eslint-plugin-vue: "npm:^9.29.1"
     globals: "npm:^15.11.0"
     prettier: "npm:^3.3.3"
+    primevue: "npm:^4.1.1"
     typescript: "npm:~5.6.2"
     typescript-eslint: "npm:^8.11.0"
     vite: "npm:^5.4.9"
@@ -2561,6 +2610,18 @@ __metadata:
   bin:
     prettier: bin/prettier.cjs
   checksum: 10c0/b85828b08e7505716324e4245549b9205c0cacb25342a030ba8885aba2039a115dbcf75a0b7ca3b37bc9d101ee61fab8113fc69ca3359f2a226f1ecc07ad2e26
+  languageName: node
+  linkType: hard
+
+"primevue@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "primevue@npm:4.1.1"
+  dependencies:
+    "@primeuix/styled": "npm:^0.2.0"
+    "@primeuix/utils": "npm:^0.2.0"
+    "@primevue/core": "npm:4.1.1"
+    "@primevue/icons": "npm:4.1.1"
+  checksum: 10c0/b4e5828583584e2fada53ad01d57eece1636d80b4dbcb7c78f871732dc4b138b2c7a5229ef70029aee4e0d99ac37dc8213cc881951e6fe4e364653e908f91336
   languageName: node
   linkType: hard
 

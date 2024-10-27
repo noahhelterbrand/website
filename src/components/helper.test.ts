@@ -1,5 +1,6 @@
 import {describe, expect, test} from 'vitest';
-import {findFibonacci} from './helper';
+
+import {findFibonacci} from './helper.ts';
 
 describe('findFibonacci', () => {
   test('should check fibonacci output', () => {

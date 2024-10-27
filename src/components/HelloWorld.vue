@@ -1,19 +1,26 @@
 <script setup lang="ts">
+import Button from 'primevue/button';
 import {computed, ref} from 'vue';
-import {findFibonacci} from './helper';
+
+import {findFibonacci} from './helper.ts';
 
 defineProps<{msg: string}>();
 
 const count = ref(1);
 
 const fibonacciCount = computed(() => findFibonacci(count.value));
+
+const buttonCallback = () => {
+  console.log('clicked!');
+  count.value++;
+};
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
+    <Button type="button" @click="buttonCallback">count is {{ count }}</Button>
     Fibonacci of count is {{ fibonacciCount }}
     <p>
       <code>components/HelloWorld.vue</code>
