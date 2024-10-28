@@ -1,0 +1,36 @@
+import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
+import HomeView from './views/HomeView.vue';
+import AboutView from './views/AboutView.vue';
+
+export enum RouteNames {
+  Home = 'Home',
+  About = 'About',
+  Intro = 'Intro',
+}
+
+const routes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    redirect: '/home',
+  },
+  {
+    path: '/home',
+    name: RouteNames.Home,
+    component: HomeView,
+    children: [
+      {
+        path: '/about',
+        name: RouteNames.About,
+        component: AboutView,
+        children: [],
+      },
+    ],
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
