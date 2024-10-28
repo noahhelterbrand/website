@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import HomeView from './components/HomeView.vue';
+import {RouterView} from 'vue-router';
 </script>
 
 <template>
   <div class="fill">
-    <HomeView msg="Vite + Vue" />
+    <RouterView></RouterView>
   </div>
 </template>
 

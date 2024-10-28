@@ -2,7 +2,7 @@
 import Button from 'primevue/button';
 
 import {findFibonacci} from './helper.ts';
-import {CustomApplicationBar} from './stateless';
+import {CustomApplicationBar} from '../components/stateless/index.ts';
 
 defineProps<{msg: string}>();
 </script>
