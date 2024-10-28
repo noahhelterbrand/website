@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import Button from 'primevue/button';
-
-import {findFibonacci} from './helper.ts';
 import {CustomApplicationBar} from '../components/stateless/index.ts';
+import HomeIntro from '../components/stateless/HomeIntro.vue';
 
 defineProps<{msg: string}>();
 </script>
@@ -14,10 +12,10 @@ defineProps<{msg: string}>();
     </div>
     <div class="page">
       <div>
-        <Button>First button</Button>
-        {{ findFibonacci(4) }}
+        <HomeIntro />
       </div>
-      <div>More Content</div>
+
+      <RouterView />
     </div>
   </div>
 </template>

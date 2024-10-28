@@ -5,6 +5,7 @@ import AboutView from './views/AboutView.vue';
 export enum RouteNames {
   Home = 'Home',
   About = 'About',
+  Intro = 'Intro',
 }
 
 const routes: RouteRecordRaw[] = [
@@ -16,11 +17,14 @@ const routes: RouteRecordRaw[] = [
     path: '/home',
     name: RouteNames.Home,
     component: HomeView,
-  },
-  {
-    path: '/about',
-    name: RouteNames.About,
-    component: AboutView,
+    children: [
+      {
+        path: '/about',
+        name: RouteNames.About,
+        component: AboutView,
+        children: [],
+      },
+    ],
   },
 ];
 
